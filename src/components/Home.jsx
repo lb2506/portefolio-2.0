@@ -42,7 +42,7 @@ const generateDeterministicImageIndexGrid = (size) => {
 };
 
 const Home = () => {
-  const [stagePos, setStagePos] = useState({ x: -50, y: 0 });
+  const [stagePos, setStagePos] = useState({ x: 100, y: -200 });
   const randomImageIndexGrid = useMemo(() => generateDeterministicImageIndexGrid(GRID_SIZE), []);
   const [hoveredImageIndices, setHoveredImageIndices] = useState({});
   const [enlargedImgData, setEnlargedImgData] = useState(null);
