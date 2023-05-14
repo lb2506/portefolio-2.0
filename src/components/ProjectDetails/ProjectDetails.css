@@ -76,13 +76,16 @@ a{
   text-align: end;
 }
 
-.project-text-content li:last-child {
+.project-text-content li:nth-last-child(2) {
   flex-direction: column;
   gap: 10px;
+}
+
+.project-text-content li:last-child{
   padding-bottom: 0;
 }
 
-.project-text-content li:last-child span {
+.project-text-content li:nth-last-child(2) span {
   text-align: start;
 }
 
