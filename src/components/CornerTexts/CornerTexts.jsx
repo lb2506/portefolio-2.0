@@ -8,7 +8,6 @@ const CornerTexts = ({ onCategoryClick, isCategoryShow }) => {
     const location = useLocation();
 
     const isHome = location.pathname === "/";
-    const isContact = location.pathname === "/contact";
 
     const handleCanvasClick = useCallback(() => {
         if (isCategoryShow) {
@@ -17,10 +16,6 @@ const CornerTexts = ({ onCategoryClick, isCategoryShow }) => {
             navigate("/");
         }
     }, [isCategoryShow, onCategoryClick, navigate]);
-
-    const handleContactClick = React.useCallback(() => {
-        navigate("/contact");
-    }, [navigate]);
 
     return (
         <div>
@@ -32,7 +27,7 @@ const CornerTexts = ({ onCategoryClick, isCategoryShow }) => {
             <nav className="top-right-menu">
                 <ul>
                     <li onClick={handleCanvasClick}>
-                        <button className={!isCategoryShow && isHome ? 'bold' : ''}>CANVAS</button>
+                        <button className={!isCategoryShow && isHome ? 'bold' : ''}>PROJETS</button>
                     </li>
                     <li>
                         <button
@@ -43,18 +38,14 @@ const CornerTexts = ({ onCategoryClick, isCategoryShow }) => {
                                 onCategoryClick();
                             }}
                         >
-                            CATEGORY
+                            CATEGORIES
                         </button>
-                    </li>
-                    <li onClick={handleContactClick}>
-                        <button className={isContact ? 'bold' : ''}>CONTACT</button>
                     </li>
                 </ul>
             </nav>
             <div className="bottom-right-links">
-                <span>EMAIL</span>
-                <span>INSTAGRAM</span>
-                <span>TWITTER</span>
+                <span><a href='mailto:baccialone.leo@gmail.com'>EMAIL</a></span>
+                <span><a href='https://www.linkedin.com/in/l%C3%A9o-baccialone-453351131/' target='_blank' rel='noreferrer' >LINKEDIN</a></span>
             </div>
         </div>
     );
