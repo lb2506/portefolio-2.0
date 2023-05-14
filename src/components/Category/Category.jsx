@@ -37,9 +37,24 @@ const Category = ({ onCategoryClick, isVisible }) => {
         }
     };
 
+    const getUniqueProjects = (projects) => {
+        const uniqueProjects = [];
+        const projectTitles = new Set();
+    
+        projects.forEach((project) => {
+            if (!projectTitles.has(project.title)) {
+                projectTitles.add(project.title);
+                uniqueProjects.push(project);
+            }
+        });
+    
+        return uniqueProjects;
+    };
+    
     const filteredProjects = selectedCategories.length > 0
-        ? projects.filter((project) => selectedCategories.includes(project.category))
-        : projects;
+        ? getUniqueProjects(projects.filter((project) => selectedCategories.includes(project.category)))
+        : getUniqueProjects(projects);
+    
 
     const colors = ['red', 'orange', 'green', 'purple', 'lightblue', 'pink'];
 

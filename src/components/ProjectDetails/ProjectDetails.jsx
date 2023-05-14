@@ -104,10 +104,10 @@ const ProjectDetails = ({ showDetails, project, onDetailsClose, handleClickOnEnl
           <div className={`project-text-content ${animationFinished ? 'fadeIn' : closing ? "fadeOut" : ""}`}>
             <h1 className="title">{project.title}</h1>
             <div>
-              <h1 className="specifications">Specifications</h1>
+              <h1 className="specifications">Détails</h1>
               <ul>
                 <li>
-                  <span>COMPLETED</span>
+                  <span>DATE</span>
                   <span>{project.completed}</span>
                 </li>
                 <li>
@@ -115,13 +115,19 @@ const ProjectDetails = ({ showDetails, project, onDetailsClose, handleClickOnEnl
                   <span>{project.type}</span>
                 </li>
                 <li>
-                  <span>ROLE</span>
+                  <span>RÔLE</span>
                   <span>{project.role}</span>
                 </li>
                 <li>
                   <span>CLIENT</span>
                   <span>{project.client}</span>
                 </li>
+                { project && project.link &&
+                <li>
+                  <span>LIEN</span>
+                  <span><a href={project.link} target='_blank' rel='noreferrer'>{project.link}</a></span>
+                </li>
+                }
                 <li>
                   <span>DESCRIPTION</span>
                   <span>{project.description}</span>
@@ -160,7 +166,7 @@ const ProjectDetails = ({ showDetails, project, onDetailsClose, handleClickOnEnl
           }
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
