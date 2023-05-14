@@ -19,6 +19,25 @@
       "https://res.cloudinary.com/dslilw3b5/image/upload/v1684085183/Portefolio%20Perso/kfc-04_esblur.webp"
     ]
   },
+    {
+    "title": "Location de bateaux",
+    "completed": "En cours",
+    "type": "React",
+    "role": "Développeur Fullstack",
+    "client": "Sea Sail and Cruise",
+    "category": "E-commerce",
+    "description": "Mise en place d'une plateforme de location de bateaux from scratch avec le paiement en ligne, le panel administrateur et la gestion des produits.",
+    "imageColor": "https://res.cloudinary.com/dslilw3b5/image/upload/v1684086990/Portefolio%20Perso/ssc-00_fthcye.webp",
+    "imageGray": "https://res.cloudinary.com/dslilw3b5/image/upload/v1684086990/Portefolio%20Perso/ssc-00-bw_bfotvl.webp",
+    "color2": "#734130",
+    "color1": "#ADADAB",
+    "mainImageBottom": "https://res.cloudinary.com/dslilw3b5/image/upload/v1684087452/Portefolio%20Perso/ssc-01_svhfio.webp",
+    "imagesBottom": [
+      "https://res.cloudinary.com/dslilw3b5/image/upload/v1684087452/Portefolio%20Perso/ssc-02_dl055n.webp",
+      "https://res.cloudinary.com/dslilw3b5/image/upload/v1684087452/Portefolio%20Perso/ssc-03_k8o1cl.webp",
+      "https://res.cloudinary.com/dslilw3b5/image/upload/v1684087452/Portefolio%20Perso/ssc-04_c6f87v.webp"
+    ]
+  },
   {
     "title": "Player Audio",
     "completed": "Février 2023",
@@ -132,44 +151,6 @@
       "https://res.cloudinary.com/dslilw3b5/image/upload/v1684083865/Portefolio%20Perso/cdv-03_pbmn6k.webp",
       "https://res.cloudinary.com/dslilw3b5/image/upload/v1684083866/Portefolio%20Perso/cdv-02_prrmkv.webp",
       "https://res.cloudinary.com/dslilw3b5/image/upload/v1684083865/Portefolio%20Perso/cdv-04_mic36p.webp"
-    ]
-  },
-  {
-    "title": "Location de bateaux",
-    "completed": "En cours",
-    "type": "React",
-    "role": "Développeur Fullstack",
-    "client": "Sea Sail and Cruise",
-    "category": "E-commerce",
-    "description": "Mise en place d'une plateforme de location de bateaux from scratch avec le paiement en ligne, le panel administrateur et la gestion des produits.",
-    "imageColor": "https://res.cloudinary.com/dslilw3b5/image/upload/v1684086990/Portefolio%20Perso/ssc-00_fthcye.webp",
-    "imageGray": "https://res.cloudinary.com/dslilw3b5/image/upload/v1684086990/Portefolio%20Perso/ssc-00-bw_bfotvl.webp",
-    "color2": "#734130",
-    "color1": "#ADADAB",
-    "mainImageBottom": "https://res.cloudinary.com/dslilw3b5/image/upload/v1684087452/Portefolio%20Perso/ssc-01_svhfio.webp",
-    "imagesBottom": [
-      "https://res.cloudinary.com/dslilw3b5/image/upload/v1684087452/Portefolio%20Perso/ssc-02_dl055n.webp",
-      "https://res.cloudinary.com/dslilw3b5/image/upload/v1684087452/Portefolio%20Perso/ssc-03_k8o1cl.webp",
-      "https://res.cloudinary.com/dslilw3b5/image/upload/v1684087452/Portefolio%20Perso/ssc-04_c6f87v.webp"
-    ]
-  },
-    {
-    "title": "Location de bateaux",
-    "completed": "En cours",
-    "type": "React",
-    "role": "Développeur Fullstack",
-    "client": "Sea Sail and Cruise",
-    "category": "E-commerce",
-    "description": "Mise en place d'une plateforme de location de bateaux from scratch avec le paiement en ligne, le panel administrateur et la gestion des produits.",
-    "imageColor": "https://res.cloudinary.com/dslilw3b5/image/upload/v1684086990/Portefolio%20Perso/ssc-00_fthcye.webp",
-    "imageGray": "https://res.cloudinary.com/dslilw3b5/image/upload/v1684086990/Portefolio%20Perso/ssc-00-bw_bfotvl.webp",
-    "color2": "#734130",
-    "color1": "#ADADAB",
-    "mainImageBottom": "https://res.cloudinary.com/dslilw3b5/image/upload/v1684087452/Portefolio%20Perso/ssc-01_svhfio.webp",
-    "imagesBottom": [
-      "https://res.cloudinary.com/dslilw3b5/image/upload/v1684087452/Portefolio%20Perso/ssc-02_dl055n.webp",
-      "https://res.cloudinary.com/dslilw3b5/image/upload/v1684087452/Portefolio%20Perso/ssc-03_k8o1cl.webp",
-      "https://res.cloudinary.com/dslilw3b5/image/upload/v1684087452/Portefolio%20Perso/ssc-04_c6f87v.webp"
     ]
   }
 ]
