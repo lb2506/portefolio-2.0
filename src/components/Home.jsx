@@ -21,14 +21,14 @@ const MARGIN = 16;
 const GRID_SIZE = 100;
 
 const bigProjects = [0, 6];
-const bigProjetsFerequency = 5;
+const bigProjetsFerequency = 4;
 
 const imagesColor = projects.map((project) => project.imageColor);
 const imagesGray = projects.map((project) => project.imageGray);
 
 const generateDeterministicImageIndexGrid = (size) => {
   const rowCoefficient = 9;
-  const colCoefficient = 4;
+  const colCoefficient = 6;
   const modCoefficient = imagesColor.length;
 
   const grid = Array(size)
@@ -42,7 +42,7 @@ const generateDeterministicImageIndexGrid = (size) => {
 };
 
 const Home = () => {
-  const [stagePos, setStagePos] = useState({ x: 100, y: -200 });
+  const [stagePos, setStagePos] = useState({ x: 14600, y: -19700 });
   const randomImageIndexGrid = useMemo(() => generateDeterministicImageIndexGrid(GRID_SIZE), []);
   const [hoveredImageIndices, setHoveredImageIndices] = useState({});
   const [enlargedImgData, setEnlargedImgData] = useState(null);
