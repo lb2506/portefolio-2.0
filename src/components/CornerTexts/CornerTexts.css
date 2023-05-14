@@ -1,0 +1,85 @@
+.top-left-text {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  font-size: 25px;
+  z-index: 998;
+  font-weight: bold;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.bottom-left-text {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 25px;
+  z-index: 998;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.top-right-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  text-align: end;
+  gap: 5px;
+  z-index: 998;
+}
+
+.top-right-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.top-right-menu button {
+  cursor: pointer;
+  background: none;
+  color: #FFFFFF;
+  border: none;
+  font-size: 25px;
+}
+
+.top-right-menu button:disabled {
+  color: #FFFFFF;
+  opacity: 0.4;
+  cursor: default;
+}
+
+.bottom-right-links {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+  gap: 5px;
+  font-size: 25px;
+  z-index: 998;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .top-left-text,
+  .top-right-menu button,
+  .bottom-left-text,
+  .bottom-right-links {
+    font-size: 20px;
+  }
+
+}
