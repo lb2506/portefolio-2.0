@@ -20,15 +20,15 @@ const LARGE_HEIGHT = 514;
 const MARGIN = 16;
 const GRID_SIZE = 100;
 
-const bigProjects = [0, 7];
-const bigProjetsFerequency = 4;
+const bigProjects = [0, 6];
+const bigProjetsFerequency = 5;
 
 const imagesColor = projects.map((project) => project.imageColor);
 const imagesGray = projects.map((project) => project.imageGray);
 
 const generateDeterministicImageIndexGrid = (size) => {
-  const rowCoefficient = 5;
-  const colCoefficient = 2;
+  const rowCoefficient = 9;
+  const colCoefficient = 4;
   const modCoefficient = imagesColor.length;
 
   const grid = Array(size)
