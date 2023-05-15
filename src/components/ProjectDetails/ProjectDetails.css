@@ -13,7 +13,6 @@
 }
 
 a{
-  text-decoration: none;
   color: var(--color2);
 }
 
@@ -76,18 +75,12 @@ a{
   text-align: end;
 }
 
-.project-text-content li:nth-last-child(2) {
-  flex-direction: column;
+
+
+.project-text-content li:last-child{
   gap: 10px;
 }
 
-.project-text-content li:last-child{
-  padding-bottom: 0;
-}
-
-.project-text-content li:nth-last-child(2) span {
-  text-align: start;
-}
 
 .title {
   font-size: 50px;
@@ -238,8 +231,6 @@ a{
 
   .project-text-content li span {
     max-width: 100%;
-    text-align: start;
-
   }
 
   .details-container-bottom {
@@ -338,8 +329,6 @@ a{
 
   .project-text-content li span {
     max-width: 100%;
-    text-align: start;
-
   }
 
   .details-container-bottom {

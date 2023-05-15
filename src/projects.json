@@ -46,7 +46,7 @@
     "client": "RTE Campus Transfo",
     "category": "Fonctionnalités",
     "link": "https://campustransfo.cloud-rte-france.com/liste-collections-expert-a-distance",
-    "description": "Mise à jour de fonctionnalités sur le site avec l'ajout d'un lecteur audio, modification en temps réel de composants React en fonction de la géolocation de l'utilisateur.",
+    "description": "Mise à jour de fonctionnalités sur le site avec l'ajout d'un lecteur audio, modification en temps réel de composants React en fonction de la géolocalisation de l'utilisateur.",
     "imageColor": "https://res.cloudinary.com/dslilw3b5/image/upload/v1684085880/Portefolio%20Perso/RTE-00_lpwlnk.jpg",
     "imageGray": "https://res.cloudinary.com/dslilw3b5/image/upload/v1684085880/Portefolio%20Perso/RTE-00-bw_rknl41.jpg",
     "color2": "#00A5DA",
