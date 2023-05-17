@@ -12,12 +12,9 @@ import ProjectDetails from './ProjectDetails/ProjectDetails';
 import projects from '../projects.json';
 import CornerTexts from "./CornerTexts/CornerTexts";
 import Category from "./Category/Category";
+import AboutMe from "./AboutMe/Aboutme";
 
-const WIDTH = 250;
-const HEIGHT = 250;
-const LARGE_WIDTH = 514;
-const LARGE_HEIGHT = 514;
-const MARGIN = 16;
+
 const GRID_SIZE = 100;
 
 const bigProjects = [0, 6];
@@ -42,6 +39,7 @@ const generateDeterministicImageIndexGrid = (size) => {
 };
 
 const Home = () => {
+  const [isMobile, setIsMobile] = useState(null);
   const [stagePos, setStagePos] = useState({ x: 14600, y: -19700 });
   const randomImageIndexGrid = useMemo(() => generateDeterministicImageIndexGrid(GRID_SIZE), []);
   const [hoveredImageIndices, setHoveredImageIndices] = useState({});
@@ -54,6 +52,46 @@ const Home = () => {
   const [showProjectDetails, setShowProjectDetails] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [showCategory, setShowCategory] = useState(false)
+  const [showAboutMe, setShowAboutMe] = useState(false)
+
+  const [WIDTH, setWIDTH] = useState(250);
+  const [HEIGHT, setHEIGHT] = useState(250);
+  const [LARGE_WIDTH, setLARGE_WIDTH] = useState(514);
+  const [LARGE_HEIGHT, setLARGE_HEIGHT] = useState(514);
+  const [MARGIN, setMARGIN] = useState(16);
+
+  const checkIsMobile = useCallback(() => {
+    if (window.innerWidth <= 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkIsMobile);
+    };
+  }, [checkIsMobile]);
+
+  useEffect(() => {
+    if (isMobile) {
+      setWIDTH(125);
+      setHEIGHT(125);
+      setLARGE_WIDTH(257);
+      setLARGE_HEIGHT(257);
+      setMARGIN(8);
+    } else {
+      setWIDTH(250);
+      setHEIGHT(250);
+      setLARGE_WIDTH(514);
+      setLARGE_HEIGHT(514);
+      setMARGIN(16);
+    }
+  }, [isMobile]);
 
   useEffect(() => {
     if (isFadingOut) {
@@ -69,19 +107,24 @@ const Home = () => {
 
   const isUnderLargeImage = useCallback((x, y, gridSize, bigProjetsFerequency) => {
     const checkPosition = (x, y) => {
-      const indexX = Math.abs(x / (WIDTH + MARGIN)) % gridSize;
-      const indexY = Math.abs(y / (HEIGHT + MARGIN)) % gridSize;
+  const indexX = Math.abs(x / (WIDTH + MARGIN)) % gridSize;
+  const indexY = Math.abs(y / (HEIGHT + MARGIN)) % gridSize;
 
-      const imageIndex = randomImageIndexGrid[indexX][indexY];
-      return bigProjects.includes(imageIndex) && (Math.abs(x / (WIDTH + MARGIN)) + Math.abs(y / (HEIGHT + MARGIN))) % bigProjetsFerequency === 0;
-    };
+  if (randomImageIndexGrid[indexX]) {
+    const imageIndex = randomImageIndexGrid[indexX][indexY];
+    return bigProjects.includes(imageIndex) && (Math.abs(x / (WIDTH + MARGIN)) + Math.abs(y / (HEIGHT + MARGIN))) % bigProjetsFerequency === 0;
+  }
+
+  return false;
+};
+
 
     const left = checkPosition(x - (WIDTH + MARGIN), y);
     const top = checkPosition(x, y - (HEIGHT + MARGIN));
     const topLeft = checkPosition(x - (WIDTH + MARGIN), y - (HEIGHT + MARGIN));
 
     return left || top || topLeft;
-  }, [randomImageIndexGrid]);
+  }, [randomImageIndexGrid,WIDTH,MARGIN,HEIGHT]);
 
 
   const { width: windowWidth, height: windowHeight } = useWindowSize();
@@ -141,7 +184,7 @@ const Home = () => {
     return (
       bigProjects.includes(imageIndex) &&
       (Math.abs(x / (WIDTH + MARGIN)) + Math.abs(y / (HEIGHT + MARGIN))) % bigProjetsFerequency === 0);
-  }, []);
+  }, [WIDTH,MARGIN,HEIGHT]);
 
   const handleClick = useCallback((x, y) => {
     const indexX = Math.abs(x / (WIDTH + MARGIN)) % GRID_SIZE;
@@ -166,7 +209,7 @@ const Home = () => {
     setTimeout(() => {
       setShowProjectDetails(true);
     }, 500)
-  }, [randomImageIndexGrid, images, stagePos, shouldEnlargeFirstImage]);
+  }, [randomImageIndexGrid, images, stagePos, shouldEnlargeFirstImage,WIDTH,MARGIN,HEIGHT,LARGE_HEIGHT,LARGE_WIDTH]);
 
 
   const EnlargedImageComponent = useMemo(() => {
@@ -185,11 +228,21 @@ const Home = () => {
   return (
     <>
       <CornerTexts
-        onCategoryClick={() => setShowCategory(!showCategory)}
+        onCategoryClick={() => {setShowAboutMe(false); setShowCategory(!showCategory)}}
+        onAboutMeClick={() => {setShowCategory(false); setShowAboutMe(!showAboutMe)}}
         isCategoryShow={showCategory}
+        isAboutMeShow={showAboutMe}
       />
       {showCategory && (
         <Category onCategoryClick={() => setShowCategory(!showCategory)} isVisible={showCategory} />
+      )}
+      {showAboutMe && (
+        <AboutMe
+        showAboutMe={showAboutMe}
+        fadeOutAnimation={() => {setIsFadingOut(true)}}
+        closeAboutMe={() => setShowAboutMe(false)}
+        isFadingOut={isFadingOut}
+        />
       )}
       <Stage
         className="container"

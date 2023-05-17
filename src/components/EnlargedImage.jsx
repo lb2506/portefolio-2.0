@@ -21,7 +21,7 @@ const EnlargedImage = ({ enlargedImgData, isReturning }) => {
       window.removeEventListener('resize', checkIsMobile);
     };
   }, [checkIsMobile]);
-  
+
   if (!enlargedImgData) return null;
 
   const { src, x, y, width, height } = enlargedImgData;
@@ -32,9 +32,14 @@ const EnlargedImage = ({ enlargedImgData, isReturning }) => {
   const initX = x - centerX;
   const initY = y - centerY;
 
-  const imageSize = width && height === 250 ? "small" : "big";
+  const imageSize = width === 250 || width === 125 ? "small" : "big";
   const animationName = isReturning ? `move-to-origin-${imageSize}${isMobile ? '-mobile' : ''}` : `move-to-center-${imageSize}${isMobile ? '-mobile' : ''}`;
 
+  const cssVars = {
+    '--smallMobileScale': `${isMobile ? 250/125 : 1}`,
+    '--bigMobileScale': `${isMobile ? 250/257 : 250/514}`,
+  }
+  
   const containerStyle = {
     position: "fixed",
     willChange: 'transform',
@@ -49,6 +54,7 @@ const EnlargedImage = ({ enlargedImgData, isReturning }) => {
     animationTimingFunction: "ease-in-out",
     '--init-x': `${initX}px`,
     '--init-y': `${initY}px`,
+    ...cssVars
   };
 
   const imgStyle = {
@@ -57,6 +63,9 @@ const EnlargedImage = ({ enlargedImgData, isReturning }) => {
     objectFit: "contain",
     pointerEvents: "none",
   };
+
+  
+
 
   return (
     <div className="container-enlarged" style={containerStyle}>
