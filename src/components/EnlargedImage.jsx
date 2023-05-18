@@ -51,7 +51,7 @@ const EnlargedImage = ({ enlargedImgData, isReturning }) => {
     animationName: animationName,
     animationDuration: "1s",
     animationFillMode: "forwards",
-    animationTimingFunction: "cubic-bezier(0.78,-0.3, 0, 1.24)",
+    animationTimingFunction: "cubic-bezier(0.86, 0.01, 0.01, 1)",
     '--init-x': `${initX}px`,
     '--init-y': `${initY}px`,
     ...cssVars
