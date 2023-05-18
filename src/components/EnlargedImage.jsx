@@ -49,9 +49,9 @@ const EnlargedImage = ({ enlargedImgData, isReturning }) => {
     height: height,
     zIndex: 999,
     animationName: animationName,
-    animationDuration: "0.5s",
+    animationDuration: "1s",
     animationFillMode: "forwards",
-    animationTimingFunction: "ease-in-out",
+    animationTimingFunction: "cubic-bezier(0.78,-0.3, 0, 1.24)",
     '--init-x': `${initX}px`,
     '--init-y': `${initY}px`,
     ...cssVars
